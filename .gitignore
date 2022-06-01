@@ -4,3 +4,4 @@ build
 *.asar
 *.zip
 password.json
+.DS_Store
