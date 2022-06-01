@@ -1,0 +1,36 @@
+{
+  "name": "electron-puppeteer",
+  "version": "1.0.0",
+  "description": "electron-puppeteer",
+  "main": "main.js",
+  "scripts": {
+    "puppeteer": "asar pack ./node_modules/puppeteer/.local-chromium/mac-991974/chrome-mac/Chromium.app ./.local-chromium.asar",
+    "build": "electron-builder -m"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "asar": "^3.1.0",
+    "puppeteer-core": "^14.1.2"
+  },
+  "devDependencies": {
+    "electron": "^19.0.1",
+    "electron-builder": "^23.0.3",
+    "electron-notarize": "^1.2.1",
+    "puppeteer": "^14.1.2"
+  },
+  "build": {
+    "asar": true,
+    "appId": "com.netease.dbox",
+    "mac": {
+    },
+    "files": [
+      "main.js",
+      "index.html"
+    ],
+    "extraResources": [
+      ".local-chromium.asar"
+    ],
+    "afterSign": "./notarize.js"
+  }
+}
